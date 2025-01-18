@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+
 </head>
 
 <body>
@@ -305,15 +305,14 @@
     <script>
         function exportTableToCSV() {
             const rows = document.querySelectorAll(".investment-table tr");
-            let csvContent = "S/N,NAME,AMOUNT,PROJECT,ROI,LAST DEPOSIT\n"; // Add headers
-
+            let csvContent = "S/N,NAME,AMOUNT,PROJECT,ROI,LAST DEPOSIT\n";
             rows.forEach((row) => {
-                const cols = row.querySelectorAll("td, th"); // Get all cells (th or td)
+                const cols = row.querySelectorAll("td, th");
                 const rowData = [];
                 cols.forEach((col) => {
-                    rowData.push(col.innerText); // Get text content of each cell
+                    rowData.push(col.innerText);
                 });
-                csvContent += rowData.join(",") + "\n"; // Add row data to CSV content
+                csvContent += rowData.join(",") + "\n";
             });
 
             // Create a Blob from the CSV content
@@ -322,10 +321,10 @@
             });
             const link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.setAttribute("download", "investment_overview.csv"); // Set the file name
-            document.body.appendChild(link); // Append to the body for Firefox compatibility
-            link.click(); // Trigger the download
-            document.body.removeChild(link); // Clean up
+            link.setAttribute("download", "investment_overview.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // Chart.js code
@@ -398,9 +397,8 @@
         // Handle form submission (optional)
         document.getElementById("addProjectForm").onsubmit = function(event) {
             event.preventDefault();
-            // You can add logic to process the form data here
-            alert("Project added!"); // Placeholder alert
-            modal.style.display = "none"; // Close the modal
+            alert("Project added!");
+            modal.style.display = "none";
         };
 
         function previewImages() {
@@ -412,11 +410,11 @@
                 const reader = new FileReader();
 
                 reader.onload = function(e) {
-                    previewImage.src = e.target.result; // Set the image source to the loaded file
-                    previewImage.style.display = "block"; // Show the image
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = "block";
                 };
 
-                reader.readAsDataURL(files[0]); // Read the first selected file
+                reader.readAsDataURL(files[0]);
             }
         }
     </script>
