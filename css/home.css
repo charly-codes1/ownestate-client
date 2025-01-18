@@ -633,6 +633,14 @@ footer {
     margin-right: 10px;
 }
 
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 3rem;
+}
+
 
 /* Responsive design */
 

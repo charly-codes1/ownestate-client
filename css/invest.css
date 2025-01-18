@@ -1,218 +1,1339 @@
- @import url(colors.css);
- *,
- *::after,
- *::before {
-     margin: 0;
-     padding: 0;
-     box-sizing: inherit;
- }
- 
- body {
-     box-sizing: border-box;
-     font-family: "Anek Latin", serif;
-     line-height: 1.5;
- }
- 
- li {
-     list-style: none;
- }
- 
- a {
-     text-decoration: none;
- }
- /* Header */
- 
- .header {
-     z-index: 10;
-     position: absolute;
- }
- 
- .navbar {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 1rem 2rem;
-     margin: 0;
-     width: 100vw;
-     background-color: white;
-     border: 2px solid white;
-     position: relative;
- }
- /* Hamburger Menu */
- 
- .hamburger {
-     display: none;
- }
- 
- .bar {
-     display: block;
-     width: 25px;
-     height: 3px;
-     margin: 5px auto;
-     transition: all 0.3s ease-in-out;
-     background-color: #101010;
- }
- /* Navigation Menu */
- 
- .nav-menu {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-grow: 1;
- }
- 
- .nav-buttons {
-     display: flex;
-     justify-content: flex-end;
-     align-items: center;
-     margin-left: 5rem;
-     margin-right: 3rem;
- }
- 
- .nav-list {
-     display: flex;
-     margin-right: 0;
- }
- 
- .nav-item {
-     margin-left: 5rem;
- }
- 
- .nav-link {
-     font-size: 1.2rem;
-     font-weight: 400;
-     color: var(--navyblue);
- }
- 
- .nav-link:hover {
-     color: var(--beige);
- }
- 
- .nav-logo {
-     color: var(--navyblue);
-     font-size: 25px;
-     font-weight: 700;
- }
- /* Hero Section */
- 
- .hero-section {
-     position: relative;
-     text-align: center;
- }
- 
- .bg-video img {
-     width: 100%;
-     height: auto;
- }
- 
- .hero-section__content {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     z-index: 5;
-     color: white;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
- }
- /* Opportunities Grid */
- 
- .opportunities {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-around;
-     padding: 2em 0;
-     gap: 20px;
- }
- 
- .opportunities .card {
-     background: #fff;
-     border-radius: 10px;
-     padding: 20px;
-     width: 20%;
-     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
- }
- 
- @media (max-width: 768px) {
-     .navbar {
-         flex-direction: column;
-         align-items: flex-start;
-     }
-     .hamburger {
-         display: block;
-     }
-     .nav-buttons {
-         margin-left: 0;
-         margin-right: 0;
-     }
-     .nav-item {
-         margin-left: 2rem;
-     }
-     .opportunities .card {
-         width: 45%;
-         /* Two columns on smaller screens */
-     }
- }
- 
- @media (max-width: 480px) {
-     .opportunities .card {
-         width: 100%;
-         /* Full width cards on very small screens */
-     }
-     .nav-item {
-         margin-left: 1rem;
-     }
-     .nav-logo {
-         font-size: 20px;
-     }
- }
- /* Footer */
- 
- footer {
-     background-color: #111b20;
- }
- 
- .footer {
-     display: flex;
-     flex-direction: column;
-     padding: 70px 20px;
-     /* Adjusted padding for smaller screens */
- }
- /* Testimonial Section */
- 
- .testimonials-container {
-     display: flex;
-     flex-wrap: wrap;
-     gap: 20px;
-     max-width: 960px;
-     margin: 0 auto;
-     padding: 20px;
- }
- 
- .testimonial-card {
-     background-color: #1d3557;
-     color: #fff;
-     border-radius: 8px;
-     padding: 20px;
-     margin: 10px;
-     flex: 1 1 calc(30% - 20px);
-     /* Three columns layout */
-     max-width: calc(30% - 20px);
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
- 
- @media (max-width: 768px) {
-     .testimonial-card {
-         flex: 1 1 calc(45% - 20px);
-         /* Two columns on smaller screens */
-         max-width: calc(45% - 20px);
-     }
- }
- 
- @media (max-width: 400px) {
-     .testimonial-card {
-         flex: 1 1 100%;
-         /* Full-width cards on small screens */
-         max-width: 100%;
-     }
- }
+@import url(colors.css);
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Anek Latin", serif;
+    line-height: 1.5;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    z-index: 10;
+    position: absolute;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 0;
+    /* Reset margins */
+    width: 100vw;
+    /* Make it span the full width of the viewport */
+    background-color: white;
+    /* Set white background */
+    border: 2px solid white;
+    /* Retain the border */
+    position: relative;
+    /* Ensure it spans the viewport properly */
+    left: 0;
+    /* Align to the left edge */
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    /* Center the links */
+    align-items: center;
+    flex-grow: 1;
+    /* Ensure it takes up available space */
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 3rem;
+    white-space: nowrap;
+}
+
+button {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 0;
+    /* Remove the right margin */
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navyblue);
+}
+
+.nav-link:hover {
+    color: var(--beige);
+}
+
+.nav-logo {
+    color: var(--navyblue);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.estate {
+    color: var(--beige);
+}
+
+.signup {
+    background-color: var(--beige);
+    color: var(--pure-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.invest {
+    font-weight: 700;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+}
+
+.bg-video img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-section__content {
+    position: absolute;
+    /* Positioning it on top of the image */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for centering */
+    z-index: 5;
+    /* Ensure content is on top of the image */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /*  text shadow for better readability */
+}
+
+.hero-section__header {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.hero-section__content p {
+    font-weight: 400;
+}
+
+.estate {
+    color: #f3a261;
+}
+
+.upper-section {
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 4%;
+    font-size: 14px;
+}
+
+.lower-section {
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 4%;
+    font-size: 14px;
+}
+
+.opportunities {
+    padding: 20px;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 30px;
+    /* Increased space between cards */
+}
+
+.progress-bar-container {
+    margin: 15px 0;
+    position: relative;
+    /* Ensure child elements can be positioned relative to this */
+    text-align: left;
+    /* Align contents to the left */
+}
+
+.progress-bar {
+    width: 90%;
+    /* Adjust width as needed */
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0;
+    /* Remove margin to align with container */
+}
+
+.progress {
+    height: 100%;
+    background: #1d3557;
+    border-radius: 5px;
+}
+
+.progress-percentage {
+    position: absolute;
+    /* Position relative to the progress-bar-container */
+    left: calc(90% + 10px);
+    /* Position it just to the right of the progress bar */
+    top: -2px;
+    /* Adjust vertical alignment */
+    font-size: 0.9rem;
+    color: #333;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #f3a261;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.cont-text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--navyblue);
+}
+
+.calculator-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.property-selection,
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.result {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+
+/* Styles for calculator buttons */
+
+.calculator-container .button-group {
+    display: flex;
+    justify-content: space-between;
+    /* Space buttons evenly */
+    margin-top: 10px;
+    /* Add space above the button group */
+}
+
+.calculator-container {
+    width: 100%;
+    background-color: #121b20;
+    color: white;
+}
+
+.calculator-btn {
+    width: 48%;
+    /* Make buttons take approximately half the width */
+    padding: 10px;
+    background-color: #1d3557;
+    /* Color specific to calculator buttons */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calculator-btn:hover {
+    background-color: #457b9d;
+}
+
+
+/* Ensure buttons in cards have their own styling */
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.nav-logo {
+    color: #193855;
+}
+
+.btn-primary {
+    background-color: #f3a261;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .opportunities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on very small screens */
+    }
+}
+
+.upper-section {
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 4%;
+    font-size: 14px;
+}
+
+.opportunities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em 0;
+    gap: 20px;
+}
+
+.opportunities>.card {
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 6%;
+    border-radius: 10px;
+    padding: 20px;
+    width: 20%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f3a261;
+    /* Orange border only for cards in opportunities */
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.opportunities .card:nth-of-type(2) h2 {
+    margin-top: 40px;
+}
+
+.opportunities .card:nth-of-type(3) h2 {
+    margin-top: 45px;
+}
+
+.card-content {
+    max-width: 70%;
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    object-fit: cover;
+}
+
+.star-rating {
+    margin-bottom: 10px;
+    /* Space below the star rating */
+}
+
+.card {
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 6%;
+    border-radius: 10px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #1d3557;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+.card ul li i {
+    margin-right: 8px;
+    color: #1d3557;
+}
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 3px;
+    width: 100%;
+    position: relative;
+}
+
+.progress {
+    background-color: #1d3557;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    margin-left: 10px;
+    /* Space between the bar and percentage */
+    font-weight: bold;
+    color: #000;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: #f3a261;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #d1d6da;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .opportunities>.card {
+        width: 100%;
+    }
+}
+
+.test-section {
+    text-align: center;
+}
+
+.test-section h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #1d3557;
+}
+
+.test-section h4 {
+    margin-top: 0;
+}
+
+.container-about {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 2.2em;
+    width: 100%;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+hr {
+    margin-top: 5%;
+}
+
+span {
+    color: #f3a261;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #e0f7fa;
+    /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: none;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+    /* White background for items */
+    border-radius: 10px;
+    margin: 10px;
+    /* Space between boxes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img.profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.carousel-item .text {
+    flex: 1;
+}
+
+.carousel-item h1 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+.carousel-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.top-right-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.top-right-icons svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    fill: #f3a261;
+}
+
+.stars {
+    display: flex;
+}
+
+.stars svg {
+    margin-right: 5px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-wrapper .carousel-item {
+    scroll-snap-align: start;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    /* Space between icons */
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    /* Width of the icon container */
+    height: 40px;
+    /* Height of the icon container */
+    border-radius: 50%;
+    background-color: #f0a472;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: #f0a472;
+}
+
+.cards {
+    background-color: #1d3557;
+    color: #fff;
+}
+
+.star-rating {
+    color: #f3a261;
+}
+
+
+/* General Card Styling */
+
+.cards {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+
+/* Profile Image Styling */
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+/* Card Content Styling */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+
+/* Top Row (Stars + Thumbs Up) */
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Star Rating Styling */
+
+.star-rating {
+    color: #f39c12;
+    /* Gold color for stars */
+    font-size: 18px;
+}
+
+
+/* Preserve Existing Text Colors */
+
+.card-content h2 {
+    margin: 0;
+    font-size: 18px;
+    color: inherit;
+    /* Inherits color from parent */
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 14px;
+    color: inherit;
+    /* Inherits color from parent */
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #111b20;
+}
+
+.footer {
+    display: flex;
+    padding: 70px 100px;
+}
+
+.logo {
+    margin-bottom: 5px;
+}
+
+.footer-first {
+    flex: 1;
+    align-items: center;
+}
+
+.footer__first-text {
+    color: #ffffff;
+    /* Use your desired color */
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer__first-socials {
+    display: flex;
+    gap: 10px;
+    /* Space between icons */
+}
+
+.footer__first-socials img {
+    height: 40px;
+    /* Adjust icon size */
+}
+
+.footer-second {
+    flex: 1;
+}
+
+.quick-links h3,
+.contact-us h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #f3a261;
+    /* Adjust color as needed */
+}
+
+.quick-links ul,
+.contact-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.list-links {
+    color: #ffffff;
+    /* Adjust color as needed */
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.column p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    /* Adjust color as needed */
+}
+
+.column img {
+    height: 20px;
+    /* Adjust icon size */
+}
+
+.copyright {
+    border-top: 2px solid #ffffff;
+    /* Adjust color as needed */
+    padding: 20px 100px;
+    font-size: 15px;
+    color: #ffffff;
+    /* Adjust color as needed */
+}
+
+a {
+    text-decoration: none;
+    /* Remove underline from all links */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Optional: Add underline on hover for better UX */
+}
+
+
+/* Testimonials */
+
+.testimonials-container {
+    display: flex;
+    gap: 20px;
+    /* Adds consistent spacing between items */
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.testi-text {
+    text-align: center;
+    font-size: 30px;
+    color: #1d3557;
+}
+
+.testimonial-card {
+    background-color: #1d3557;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(30% - 20px);
+    /* Ensures cards are 30% of the row minus margin */
+    max-width: calc(30% - 20px);
+    /* Prevents cards from exceeding their space */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #343a40;
+}
+
+.testimonial-card {
+    margin: 10px;
+    /* Keep margin for spacing */
+    flex: 1 1 calc(33.33% - 20px);
+    /* Adjust to 33.33% for three cards */
+    max-width: calc(33.33% - 20px);
+    /* Ensure max width fits */
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+
+.author-text h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+.author-text p {
+    font-weight: 400;
+    color: #f4a261;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 1 1 calc(45% - 20px);
+        /* Two columns on smaller screens */
+        max-width: calc(45% - 20px);
+    }
+}
+
+@media (max-width: 400px) {
+    .testimonial-card {
+        flex: 1 1 100%;
+        /* Full-width cards on small screens */
+        max-width: 100%;
+    }
+}
+
+
+/* ... rest of your CSS remains the same ... */
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #343a40;
+}
+
+.rating {
+    color: #f4a261;
+    margin-bottom: 10px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.testimonial-text {
+    margin-bottom: 15px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    color: #a0aec0;
+}
+
+.author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+/* POP-Up */
+
+.popup {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* Initially hidden */
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.popup__content {
+    background-color: var(--pure-white);
+    border-radius: 3px;
+    width: 60%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    transition: all 0.5s 0.2s;
+    padding: 3rem 5rem;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__close,
+.popup__close:link,
+.popup__close:visited {
+    color: var(--grey-dark);
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.popup__close:hover {
+    color: var(--green);
+}
+
+.popup__left {
+    flex: 1;
+    /* padding: 3rem 5rem; */
+}
+
+.popup__right {
+    flex: 1;
+    color: var(--medium-blue);
+    /* padding: 3rem 5rem; */
+}
+
+.popup__img {
+    width: 100%;
+}
+
+.popup__img2 {
+    width: 48%;
+}
+
+.row-6 {
+    display: flex;
+    flex-direction: column;
+    /* gap: 52px; */
+}
+
+.col-6 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    color: var(--pure-white);
+}
+
+
+/* Open states  */
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.heading-secondary {
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    color: var(--grey-dark);
+    /* /* letter-spacing: 0.2rem;  */
+    transition: all 0.2s;
+}
+
+.heading-tertiary {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.key-details h3,
+.project h3,
+.features h3,
+.sponsors h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.key-details ul li,
+.features ul li {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 5px;
+}
+
+.project p,
+.sponsors p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.sect-invest {
+    background: #1d3557;
+    color: #fff;
+    border: none;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .testimonial-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 400px) {
+    .testimonial-card {
+        width: 100%;
+    }
+}
+
+
+/* Ensure Flexbox Layout is flexible */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Anek Latin", serif;
+    line-height: 1.5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 0;
+    width: 100vw;
+    background-color: white;
+    border: 2px solid white;
+    position: relative;
+    left: 0;
+}
+
+.hamburger {
+    display: none;
+    /* Initially hide the hamburger */
+}
+
+@media (max-width: 768px) {
+    /* For tablets and smaller devices */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        /* Add some padding */
+    }
+    .hamburger {
+        display: block;
+        /* Show the hamburger on smaller screens */
+    }
+    .nav-menu {
+        display: none;
+        /* Hide nav menu on small screens by default */
+        width: 100%;
+        /* Full width */
+        text-align: center;
+        /* Center align menu items */
+    }
+    .nav-item {
+        margin: 1rem 0;
+        /* Space out nav items */
+    }
+    .opportunities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Show 2 columns on small screens */
+    }
+    .testimonials-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .opportunities>.card {
+        width: 100%;
+        /* Full width cards on smaller screens */
+        margin-bottom: 20px;
+        /* Add some space below each card */
+    }
+    .cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile devices */
+    .navbar {
+        padding: 1rem;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-menu {
+        display: block;
+        /* Ensure the menu is visible */
+    }
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens */
+    }
+    .testimonials-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card-buttons {
+        flex-direction: column;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+    .footer__first-socials {
+        justify-content: center;
+        gap: 15px;
+    }
+    .opportunities>.card {
+        width: 100%;
+        /* Ensure cards span full width */
+    }
+}
+
+
+/* Hamburger Menu Interaction */
+
+.hamburger.active+.nav-menu {
+    display: flex;
+    /* Show the menu when hamburger is clicked */
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
