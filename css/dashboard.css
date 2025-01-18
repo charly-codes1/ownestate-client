@@ -514,6 +514,14 @@ td {
     font-weight: 600;
 }
 
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 3rem;
+}
+
 .blued {
     color: var(--navyblue);
 }
