@@ -1,0 +1,223 @@
+/* General Styles */
+
+body {
+    box-sizing: border-box;
+    font-family: "Anek Latin", serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* Ensure all elements respect box-sizing */
+}
+
+.main {
+    max-width: 1200px;
+    width: 100%;
+    /* Full width for smaller screens */
+    margin: 0 auto;
+    /* Center the main container */
+    padding: 20px;
+    /* Add some padding */
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+
+/* Navbar Styles */
+
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .back-arrow {
+    color: #000000;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    margin-left: 8px;
+    top: 4px;
+}
+
+.navbar .brand {
+    color: #1d3557;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.navbar .highlight {
+    color: #ff8500;
+}
+
+
+/* Form Container */
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space between items */
+    gap: 30px;
+    flex-wrap: wrap;
+    /* Allow wrapping */
+    padding: 20px;
+    /* Add padding for aesthetics */
+}
+
+.illustration {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.form {
+    flex: 1;
+    padding: 20px;
+    /* Adds space around the form */
+}
+
+.illustration img {
+    max-width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+h2 {
+    font-size: 24px;
+    color: #1d3557;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    /* Full width for input fields */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff8500;
+    border-radius: 4px;
+}
+
+.password-container {
+    display: flex;
+    gap: 10px;
+    /* Reduced gap for better alignment */
+    width: 100%;
+    margin-bottom: 10px;
+    /* Space between fields */
+}
+
+.password-field {
+    position: relative;
+    flex: 1;
+    /* Allow fields to grow */
+}
+
+.password-field input {
+    padding-right: 40px;
+    /* Space for the eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+    /* Adjusted for visibility */
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}
+
+.terms {
+    margin-bottom: 20px;
+}
+
+.terms-checkbox {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.terms-checkbox a {
+    color: #ff8500;
+    text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    /* Center the button */
+    background-color: #1d3557;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    /* Full width for button */
+    max-width: 200px;
+    /* Limit button width */
+}
+
+button:hover {
+    background-color: #004085;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        /* Stack elements vertically */
+        padding: 10px;
+        /* Adjust padding */
+    }
+    .illustration,
+    .form {
+        width: 100%;
+        /* Full width on smaller screens */
+        height: auto;
+    }
+    .password-container {
+        flex-direction: column;
+        /* Stack password fields */
+        gap: 0;
+        /* Remove gap for stacked layout */
+    }
+    .password-field {
+        width: 100%;
+        /* Full width for password fields */
+    }
+}

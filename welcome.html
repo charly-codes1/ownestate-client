@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/sign_.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="images/welcome.jpg" alt="Placeholder Image" />
+        </div>
+        <div class="form-section">
+            <h1>Own<span>Estate</span></h1>
+            <h1>Welcome Back</h1>
+            <p>
+                Don't have an account?
+                <a href="index.html" class="signup-link">Sign Up</a>
+            </p>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                </div>
+
+                <!-- Password Field with SVG Eye Icons -->
+                <div class="form-group password-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                    <!-- SVG Eye Icon for toggling password visibility -->
+                    <span class="eye-icon" id="toggle-password" onclick="togglePasswordVisibility()">
+              <svg
+                class="eye-open"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="none"
+                  stroke="#F4A261"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                >
+                  <path d="M3 13c3.6-8 14.4-8 18 0" />
+                  <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                </g>
+              </svg>
+            </span>
+                </div>
+
+                <button type="submit" class="btn-sign-in">Sign In</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility function
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("password");
+            const icon = document.getElementById("toggle-password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.innerHTML = `
+            <svg class="eye-opened" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <path d="M3 13c3.6-8 14.4-8 18 0" />
+                    <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                </g>
+            </svg>
+        `;
+            } else {
+                passwordField.type = "password";
+                icon.innerHTML = `
+            <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <path d="M3 13c3.6-8 14.4-8 18 0" />
+                    <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                </g>
+            </svg>
+        `;
+            }
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!email || !password) {
+                document.getElementById("message").textContent = "Error: Email and password are required.";
+                return;
+            }
+
+            try {
+                const response = await fetch("https://own-estate.onrender.com/api/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log("Login successful:", data);
+                    document.getElementById("message").textContent = "Login successful! Redirecting...";
+                    window.location.href = "/dashboard";
+                } else {
+                    const error = await response.json().catch(() => ({}));
+                    console.error("Login failed:", error);
+                    document.getElementById("message").textContent = `Error: ${error.message || "Login failed"}`;
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+                document.getElementById("message").textContent = "Error: Unable to connect to the server.";
+            }
+        });
+    </script>
+</body>
+
+</html>

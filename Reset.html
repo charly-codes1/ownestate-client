@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password || OwnEstate</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/Reset.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+</head>
+
+<body>
+    <div class="forgot-password-container">
+        <div class="header">
+            <div class="circle">
+                <a href="welcome (2).html" class="back-arrow">&#8592;</a>
+            </div>
+            <span class="logo">Own<span class="highlight">Estate</span></span>
+        </div>
+
+        <div class="content">
+            <div class="image-section">
+                <img src="images/make.jpg" alt="Password Reset Illustration" />
+            </div>
+
+            <div class="form-section">
+                <h1>Reset Password</h1>
+                <form id="resetPasswordForm" action="#" method="post">
+                    <div style="position: relative">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" style="padding-right: 30px" required />
+                        <span id="togglePassword" style="
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  cursor: pointer;
+                ">
+                <svg
+                  class="eye-open"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="#F4A261"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  >
+                    <path d="M3 13c3.6-8 14.4-8 18 0" />
+                    <path
+                      fill="#F4A261"
+                      d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6"
+                    />
+                  </g>
+                </svg>
+              </span>
+                    </div>
+
+                    <div style="position: relative">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your new password" style="padding-right: 30px" required />
+                        <span id="toggleConfirmPassword" style="
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  cursor: pointer;
+                ">
+                <svg
+                  class="eye-open"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="#F4A261"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  >
+                    <path d="M3 13c3.6-8 14.4-8 18 0" />
+                    <path
+                      fill="#F4A261"
+                      d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6"
+                    />
+                  </g>
+                </svg>
+              </span>
+                    </div>
+
+                    <button type="submit">Continue</button>
+                    <div id="message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        const toggleConfirmPassword = document.getElementById(
+            "toggleConfirmPassword"
+        );
+        const confirmPasswordInput = document.getElementById("confirm-password");
+
+        togglePassword.addEventListener("click", () => {
+            const type = passwordInput.type === "password" ? "text" : "password";
+            passwordInput.type = type;
+            togglePassword.innerHTML =
+                type === "password" ?
+                `
+                <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <path d="M3 13c3.6-8 14.4-8 18 0" />
+                        <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                </svg>
+            ` :
+                `
+                <svg class="eye-opened" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <path d="M3 13c3.6-8 14.4-8 18 0" />
+                        <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                </svg>
+            `;
+        });
+
+        toggleConfirmPassword.addEventListener("click", () => {
+            const type =
+                confirmPasswordInput.type === "password" ? "text" : "password";
+            confirmPasswordInput.type = type;
+            toggleConfirmPassword.innerHTML =
+                type === "password" ?
+                `
+                <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <path d="M3 13c3.6-8 14.4-8 18 0" />
+                        <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                </svg>
+            ` :
+                `
+                <svg class="eye-opened" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <path d="M3 13c3.6-8 14.4-8 18 0" />
+                        <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                </svg>
+            `;
+        });
+
+        const resetPasswordForm = document.getElementById("resetPasswordForm");
+        const messageDiv = document.getElementById("message");
+
+        resetPasswordForm.addEventListener("submit", async(event) => {
+            event.preventDefault();
+
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (password !== confirmPassword) {
+                messageDiv.textContent = "Passwords do not match!";
+                messageDiv.style.color = "red";
+                return;
+            }
+
+            try {
+                const response = await fetch("", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        password,
+                    }),
+                });
+
+                if (response.ok) {
+                    messageDiv.textContent = "Password reset successful!";
+                    messageDiv.style.color = "green";
+                    setTimeout(() => {
+                        window.location.href = "welcome.html";
+                    }, 2000);
+                } else {
+                    const error = await response.json();
+                    messageDiv.textContent = `Error: ${
+              error.message || "Reset failed"
+            }`;
+                    messageDiv.style.color = "red";
+                }
+            } catch (error) {
+                messageDiv.textContent = "Error: Unable to connect to the server.";
+                messageDiv.style.color = "red";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+body {
+    font-family: 'Anek Latin', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+h1,
+p {
+    font-weight: 700;
+    color: white;
+    /* Match navbar color */
+}
+
+.background-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.owl-carousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container-fluid {
+    position: relative;
+    z-index: 10;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* Styling for "Own" */
+
+.navbar-brand .own {
+    color: #16405E;
+    /* Apply the desired color */
+    font-weight: bold;
+}
+
+
+/* Styling for "Estate" */
+
+.navbar-brand .estate {
+    color: #F0A472;
+    /* Keep "Estate" white */
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.navbar-brand span {
+    color: #F0A472;
+    font-size: 24px;
+    /* Default color for "Own" */
+}
+
+p {
+    font-size: 25px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 22px;
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #16405E;
+    background-color: #F3A261;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+.invest {
+    background-color: #1D3557;
+    color: #F0A472;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-brand {
+    font: size 1.5rem;
+    font-weight: bold;
+}
+
+span {
+    color: #F0A472;
+}

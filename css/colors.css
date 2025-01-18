@@ -1,0 +1,19 @@
+:root {
+  --navyblue: #1d3557;
+  --beige: #f4a261;
+  --pure-white: rgb(255, 255, 255);
+  --darker-blue: #111b20;
+  --grayopacity: rgba(217, 217, 217, 0.7);
+  --gray: #d9d9d9;
+  --medium-blue: #263238;
+  --green: #008000;
+  --rose: #ad6359;
+  --yellow: #cd8e02;
+  --dark-rose: #9a4a4d;
+  --light-blue: #88a9d7;
+  --dark-blue: #4d7ec3;
+  --last-blue: #305992;
+  --grey-dark: #777;
+  --grey-light: #eee;
+  --black: #000;
+}

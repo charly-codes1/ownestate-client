@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a Sponsor || OwnEstate</title>
+    <link rel="stylesheet" href="./css/Sponsor.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+</head>
+
+<body>
+    <main class="main">
+        <nav class="navbar">
+            <div class="circle">
+                <a href="./home.html" class="back-arrow">&#8592;</a>
+            </div>
+            <a href="#" class="brand">Own<span class="highlight">Estate</span></a>
+        </nav>
+        <div class="form-container">
+            <div class="illustration">
+                <img src="./images/sponsor.jpg" alt="Illustration" />
+            </div>
+            <div class="form">
+                <h2>Become a Sponsor</h2>
+                <p>
+                    Showcase your real estate projects to a community of aspiring investors.
+                </p>
+                <form>
+                    <label for="name">Full name/Organization name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name or organization name" required />
+                    <br />
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                    <div class="password-container">
+                        <div class="password-field">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password" required />
+                            <span class="toggle-password" data-target="password">
+                              <span class="toggle-password" id="toggle-password" onclick="togglePasswordVisibility()">
+                                <svg
+                                  class="eye-open"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <g
+                                    fill="none"
+                                    stroke="#F4A261"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  >
+                                    <path d="M3 13c3.6-8 14.4-8 18 0" />
+                                    <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                                  </g>
+                                </svg>
+            </span>
+                            </span>
+                        </div>
+                        <div class="password-field">
+                            <label for="retype-password">Re-type Password</label>
+                            <input type="password" id="retype-password" name="retype-password" placeholder="Re-type password" required />
+                            <span class="toggle-password" data-target="password">
+                              <span class="toggle-password" id="toggle-password" onclick="togglePasswordVisibility()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                        <path d="M3 13c3.6-8 14.4-8 18 0" />
+                                        <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                                    </g>
+                                </svg>
+                </span>
+                        </div>
+                    </div>
+                    <label for="category">Project Category</label>
+                    <input type="text" id="category" name="category" placeholder="Enter project category" required />
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter phone number" required />
+                    <div class="terms">
+                        <input type="checkbox" id="terms-checkbox" name="terms" required /> By signing up, you agree to our
+                        <a href="#">Terms and Conditions</a>.
+                        <br /> Already have an account? <a href="#">Sign In</a> |
+                        <a href="./Reset.html">Forgot password?</a>
+                    </div>
+                    <button id="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="./scripts/Sponsor.js"></script>
+</body>
+
+</html>

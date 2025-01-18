@@ -1,0 +1,197 @@
+/* Universal  */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navyblue: #1d3557;
+  --beige: #f4a261;
+  --pure-white: rgb(255, 255, 255);
+}
+
+body {
+  font-family: "Anek Latin", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.own {
+  color: #1d3557;
+}
+.estate {
+  color: #f4a261;
+}
+.container {
+  padding: 30px;
+  width: 100%; /* Responsive width */
+  max-width: 1100px; /* Maximum width */
+}
+
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.own,
+.estate {
+  font-size: 24px;
+  font-weight: bolder;
+}
+.back-link {
+  text-decoration: none;
+  color: #1d3557;
+  margin-right: 10px;
+}
+
+.investors-details {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  align-items: center; /* Vertically center content */
+}
+
+.image-container {
+  flex: 1;
+  text-align: center; /* Center the image */
+  padding: 20px;
+}
+.image-container img {
+  max-width: 100%;
+  height: 70vh;
+}
+
+.form-container {
+  flex: 1;
+}
+
+.form-container h2 {
+  color: var(--navyblue);
+  font-size: 2.5rem;
+  margin-bottom: 0.625rem;
+  text-align: center;
+}
+
+.investor-text {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1d3557;
+  text-align: center;
+}
+
+.name {
+  color: var(--navyblue);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 2px solid var(--beige);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--navyblue);
+  border-width: 2px;
+}
+.terms {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: var(--navyblue);
+}
+
+.sign {
+  color: var(--beige);
+}
+.terms label {
+  margin-left: 5px;
+}
+.links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+}
+.links p {
+  text-decoration: none;
+  color: var(--navyblue);
+  margin-bottom: 5px; /* Add some spacing between the links */
+}
+.links a,
+.terms a {
+  text-decoration: none;
+  margin-bottom: 5px; /* Add some spacing between the links */
+}
+
+button {
+  display: block;
+  margin: 0 auto; /* Center the button */
+  background-color: #1d3557;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+}
+
+button:hover {
+  background-color: #23527c;
+}
+
+.user-box {
+  position: relative;
+}
+.password-toggle-icon {
+  position: absolute;
+  top: 28%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password__toggle-icon {
+  position: absolute;
+  top: 77%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password__toggle-icon i {
+  display: none;
+  position: absolute;
+  top: 77%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--navyblue);
+}
+
+.password-toggle-icon svg {
+  font-size: 18px;
+  line-height: 1;
+  transition: color 0.3s ease-in-out;
+}
+
+.eye-icon path:hover {
+  fill: #00ffff; /* Change this to your desired color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .investors-details {
+    flex-direction: column; /* Stack image and form vertically */
+  }
+  .image-container {
+    margin-bottom: 20px;
+  }
+}

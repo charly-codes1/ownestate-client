@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investors | OwnEstate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/investors.css" />
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="heading">
+                <a href="./home.html" class="back-link">
+                    <img src="images/investing/Group 1.png" alt="back-arrow" height="30px" />
+                </a>
+                <span class="own">Own</span><span class="estate">Estate</span>
+            </div>
+            <div class="investors-details">
+                <div class="image-container">
+                    <img src="./Images/investing/7xm.xyz500303.jpg" alt="pana" />
+                </div>
+                <div class="form-container">
+                    <h2 class="investor-header">Join as an Investor</h2>
+                    <p class="investor-text">Start your journey in real estate investment today!</p>
+                    <form id="signup-form">
+                        <label for="first-name" class="name">First Name</label>
+                        <input type="text" id="first-name" name="firstName" placeholder="Enter your first name" required />
+
+                        <label for="last-name" class="name">Last Name</label>
+                        <input type="text" id="last-name" name="lastName" placeholder="Enter your last name" required />
+
+                        <label for="email" class="name">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+                        <div class="user-box">
+                            <label for="password" class="name">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                            <!-- Eye icon to toggle password visibility -->
+                            <span class="password-toggle-icon">
+                  <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                      <path d="M3 13c3.6-8 14.4-8 18 0" />
+                      <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                  </svg>
+                </span>
+
+                            <label for="confirm-password" class="name">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm your password" required />
+                            <!-- Eye icon to toggle confirm password visibility -->
+                            <span class="password-toggle-icon">
+                  <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#F4A261" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                      <path d="M3 13c3.6-8 14.4-8 18 0" />
+                      <path fill="#F4A261" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6" />
+                    </g>
+                  </svg>
+                </span>
+                        </div>
+
+                        <div class="terms">
+                            <input type="checkbox" id="terms" name="terms" required />
+                            <label for="terms">By signing up, you agree to our <a href="#" class="sign">Terms and Conditions</a></label>
+                        </div>
+
+                        <div class="links">
+                            <p>Already have an account? <a href="./welcome.html" class="sign">Sign In!</a> Forgot password? <a href="./Reset.html" class="sign">Click here!</a></p>
+                        </div>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/investors.js"></script>
+</body>
+
+</html>
